@@ -10,6 +10,10 @@
 ## Requirements
 - Deploy working Hello-world application in Kubernetes using IAC and CI pipeline.
 
+## Stratergy
+![image](https://user-images.githubusercontent.com/30200458/177701123-184e63c0-e617-4595-99e7-a5c74818d5fb.png)
+
+
 ## Hello-World APP
 - Python + Flask
 - Created a Docker Container and pushed it to Docker Registry.
