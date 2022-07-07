@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-hello-app
+  namespace: angi
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:725467313976:certificate/1709d2f2-0fce-4cb3-82c1-85ced7b426b5
+spec:
+  ingressClassName: alb
+  rules:
+    - host: saneetanarla.angi-interview-assignment.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-ingress-service
+                port:
+                  number: 443
